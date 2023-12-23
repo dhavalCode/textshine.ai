@@ -19,9 +19,9 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@repo/eslint-config": "*",
+    "@repo/tailwind-config": "*",
+    "@repo/typescript-config": "*",
     "@types/react": "^18.2.38",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",

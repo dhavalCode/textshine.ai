@@ -13,7 +13,7 @@
     "next": "^14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@repo/ui": "workspace:*"
+    "@repo/ui": "*"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.3",
@@ -21,11 +21,11 @@
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17",
     "autoprefixer": "^10.4.16",
-    "@repo/eslint-config": "workspace:*",
+    "@repo/eslint-config": "*",
     "postcss": "^8.4.31",
-    "@repo/tailwind-config": "workspace:*",
+    "@repo/tailwind-config": "*",
     "tailwindcss": "^3.3.5",
-    "@repo/typescript-config": "workspace:*",
+    "@repo/typescript-config": "*",
     "typescript": "^5.3.2"
   }
 }
