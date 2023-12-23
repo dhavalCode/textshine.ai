@@ -1,39 +1,22 @@
 {
-  "name": "textshine.ai",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "db-studio": "prisma studio",
-    "db-seed": "prisma db seed",
-    "db-migrate:deploy": "prisma migrate deploy",
-    "db-migrate:dev": "prisma migrate dev",
-    "db-push": "prisma db push",
-    "generate": "prisma generate",
-    "prod-deploy": "npm run db-migrate:deploy && npm run generate && npm run build"
-  },
-  "dependencies": {
-    "@prisma/client": "^5.7.1",
-    "next": "14.0.4",
-    "react": "^18",
-    "react-dom": "^18"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4",
-    "postcss": "^8",
-    "prisma": "^5.7.1",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "@repo/typescript-config": "workspace:*",
+    "turbo": "latest"
   },
-  "prisma": {
-    "schema": "src/prisma/schema.prisma"
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
   }
 }
