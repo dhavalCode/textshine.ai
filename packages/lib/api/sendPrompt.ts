@@ -1,5 +1,5 @@
 import { PromptTemplate } from "langchain/prompts";
-import { ChatOpenAI } from "langchain/chat_models/openai";
+import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import prisma from "@repo/prisma";
 
 export const sendPrompt = async (data: {
@@ -20,27 +20,24 @@ export const sendPrompt = async (data: {
 
   const instruction = template.prompt;
 
-  const model = new ChatOpenAI({
-    modelName: "gpt-3.5-turbo",
-    openAIApiKey: "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",
+  const model = new ChatGoogleGenerativeAI({
+    modelName: "gemini-pro",
+    maxOutputTokens: 2048,
+    apiKey: process.env.GOOGLE_API_KEY,
   });
 
   const promptTemplate = PromptTemplate.fromTemplate(
-    `You are a very good english speaker and effective communicator. Your task is to follow below instruction and give result based on user input and instruction.
-    **instruction :** 
-    -----------------
+    `You are a proficient English speaker and an effective communicator. Your task is to generate responses based on the given instruction and input.
+    **Instruction:**
     ${instruction}
     
-    **input**:
-    ----------
-    {input}`
+    **Input:**
+    ${input}`
   );
 
   const chain = promptTemplate.pipe(model);
 
   const result = await chain.invoke({ input: input });
-
-  console.log(result.name);
 
   return result.text;
 };

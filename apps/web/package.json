@@ -10,10 +10,12 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@langchain/google-genai": "^0.0.5",
     "@repo/lib": "*",
+    "@repo/prisma": "*",
     "@repo/ui": "*",
     "@repo/validation": "*",
-    "@repo/prisma": "*",
+    "lucide-react": "^0.300.0",
     "next": "^14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
