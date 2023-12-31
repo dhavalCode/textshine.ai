@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/components/header";
 import {
   Select,
@@ -12,8 +13,10 @@ import { Button } from "../components/ui/button";
 import { SendHorizontal } from "lucide-react";
 import ResultSection from "../components/result-section";
 import Loader from "@/components/loader";
+import { useState } from "react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <main className="container justify-between min-h-screen mx-auto">
       <Header />
@@ -53,14 +56,15 @@ export default function Home() {
         placeholder="Your input here."
       />
 
-      <Button className="bg-accent text-neutral-100 hover:bg-[#503dee]">
+      <Button
+        disabled={isLoading}
+        className="bg-accent text-neutral-100 hover:bg-[#503dee] rounded-xl"
+      >
         Enhance
         <SendHorizontal className="ml-2 h-4 w-4" />
       </Button>
 
-      <ResultSection />
-
-      <Loader />
+      {isLoading ? <Loader /> : <ResultSection text="Hello" />}
 
       <div className="absolute image-hero-dots w-full h-full top-0 left-0 -z-10 opacity-55" />
       <div className="liner-gradient-blue absolute w-28 h-64 top-[30%] left-[65%]" />

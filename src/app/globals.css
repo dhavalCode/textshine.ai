@@ -76,3 +76,22 @@
   background-image: linear-gradient(to bottom, #57c3ff, #57c3ff);
   filter: blur(120px);
 }
+
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: flicker 0.5s infinite;
+  margin-bottom: 4px;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -3,7 +3,11 @@ import React from "react";
 import loaderSvg from "@/assets/loader.svg";
 
 function Loader() {
-  return <Image src={loaderSvg} width={150} height={150} alt="Loading..." />;
+  return (
+    <div className="w-full flex flex-row justify-center">
+      <Image src={loaderSvg} width={120} height={120} alt="Loading..." />
+    </div>
+  );
 }
 
 export default Loader;
