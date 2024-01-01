@@ -2,7 +2,7 @@ import * as z from "zod";
 import { NextResponse } from "next/server";
 import { generateAnswer } from "@/lib/generate-answer";
 
-export const generateInputSchema = z.object({
+const generateInputSchema = z.object({
   inputText: z.string().min(1, {
     message: "input is required.",
   }),
