@@ -1,0 +1,27 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Template {
+    id      Int       @id @default(autoincrement())
+    title   String
+    prompt  String
+    History History[]
+}
+
+model History {
+    id         Int    @id @default(autoincrement())
+    input      String @db.Text()
+    output     String @db.Text()
+    modelName  String
+    templateId Int
+
+    timestamp DateTime @default(now())
+
+    template Template @relation(fields: [templateId], references: [id], onDelete: Cascade)
+}

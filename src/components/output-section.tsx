@@ -7,7 +7,7 @@ interface ResultSectionProps {
   text: string;
 }
 
-function ResultSection({ text }: ResultSectionProps) {
+function OutputSection({ text }: ResultSectionProps) {
   const [copying, setCopying] = useState(false);
   const [displayText, setDisplayText] = useState("");
   const [completedTyping, setCompletedTyping] = useState(false);
@@ -74,4 +74,4 @@ function ResultSection({ text }: ResultSectionProps) {
   );
 }
 
-export default ResultSection;
+export default OutputSection;

@@ -6,15 +6,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db-studio": "prisma studio",
+    "db-seed": "prisma db seed",
+    "db-migrate:deploy": "prisma migrate deploy",
+    "db-migrate:dev": "prisma migrate dev",
+    "db-push": "prisma db push",
+    "generate": "prisma generate",
+    "prod-deploy": "npm run db-migrate:deploy && npm run generate && npm run build"
   },
   "dependencies": {
+    "@prisma/client": "^5.7.1",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "copy-to-clipboard": "^3.3.3",
     "lucide-react": "^0.303.0",
     "next": "14.0.4",
+    "prisma": "^5.7.1",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.2.0"
@@ -31,5 +40,8 @@
     "prettier-plugin-tailwindcss": "^0.5.10",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "prisma": {
+    "schema": "./src/prisma/schema.prisma"
   }
 }
