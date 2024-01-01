@@ -39,8 +39,8 @@ function OutputSection({ text }: ResultSectionProps) {
   }, [text]);
 
   return (
-    <div className="bg-secondary/15 text-neutral-100 mt-10 rounded-xl px-4 py-5 relative">
-      <div className="mb-5">
+    <div className="bg-secondary/20 text-neutral-100 mt-10 rounded-xl px-4 py-5 relative">
+      <div className="mb-1">
         <div className="flex flex-row justify-end">
           {copying ? (
             <div className="flex flex-row items-center">

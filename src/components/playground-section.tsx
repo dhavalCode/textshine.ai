@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Template } from "@prisma/client";
-import { SendHorizontal } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -41,12 +41,7 @@ function PlaygroundSection({ templateOptions }: PlaygroundSectionProps) {
   };
 
   return (
-    <>
-      <TemplateSelector
-        value={selectedTemplateId}
-        options={templateOptions}
-        onSelect={(val) => setSelectedTemplateId(Number(val))}
-      />
+    <div className="max-w-[800px] mx-auto mt-16">
       <Textarea
         className="bg-neutral-800 text-neutral-100"
         placeholder="Your input here."
@@ -56,20 +51,27 @@ function PlaygroundSection({ templateOptions }: PlaygroundSectionProps) {
         }}
       />
 
-      <Button
-        disabled={isLoading}
-        className="bg-accent text-neutral-100 hover:bg-[#503dee] rounded-xl"
-        onClick={handleGenerate}
-      >
-        Generate
-        <SendHorizontal className="ml-2 h-4 w-4" />
-      </Button>
+      <div className="flex flex-row justify-between mt-5">
+        <TemplateSelector
+          value={selectedTemplateId}
+          options={templateOptions}
+          onSelect={(val) => setSelectedTemplateId(Number(val))}
+        />
+        <Button
+          disabled={isLoading || inputText.length === 0}
+          className="bg-accent text-neutral-100 hover:bg-[#503dee] rounded-xl"
+          onClick={handleGenerate}
+        >
+          Generate
+          <Sparkles className="ml-2 h-5 w-5" />
+        </Button>
+      </div>
 
       {isLoading && <Loader />}
       {!isLoading && displayText.length > 0 && (
         <OutputSection text={displayText} />
       )}
-    </>
+    </div>
   );
 }
 

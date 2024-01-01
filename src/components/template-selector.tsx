@@ -19,29 +19,27 @@ interface TemplateSelectorProps {
 
 function TemplateSelector({ value, options, onSelect }: TemplateSelectorProps) {
   return (
-    <div>
-      <Select
-        value={value.toString()}
-        onValueChange={(newVal) => onSelect(newVal)}
-      >
-        <SelectTrigger className="w-full text-neutral-100">
-          <SelectValue placeholder="Select" />
-        </SelectTrigger>
-        <SelectContent className="bg-neutral-800 text-neutral-100">
-          <SelectGroup className="">
-            {options.map((option) => (
-              <SelectItem
-                value={option.id.toString()}
-                key={option.id.toString()}
-                className="hover:bg-neutral-600"
-              >
-                {option.title}
-              </SelectItem>
-            ))}
-          </SelectGroup>
-        </SelectContent>
-      </Select>
-    </div>
+    <Select
+      value={value.toString()}
+      onValueChange={(newVal) => onSelect(newVal)}
+    >
+      <SelectTrigger className="w-full max-w-80 text-neutral-100">
+        <SelectValue placeholder="Select" />
+      </SelectTrigger>
+      <SelectContent className="bg-neutral-800 text-neutral-100">
+        <SelectGroup className="">
+          {options.map((option) => (
+            <SelectItem
+              value={option.id.toString()}
+              key={option.id.toString()}
+              className="hover:bg-neutral-600"
+            >
+              {option.title}
+            </SelectItem>
+          ))}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 }
 

@@ -22,12 +22,12 @@
   display: inline;
 }
 
-.liner-gradient-hero {
+/* .liner-gradient-hero {
   background-image: linear-gradient(
     to bottom,
     rgba(14, 20, 37, 0),
-    rgba(14, 20, 37, 0.88) 65%,
-    #0e1425 80%
+    rgba(14, 20, 37, 0.88) 95%,
+    #0e1425 100%
   );
 }
 
@@ -70,7 +70,7 @@
   bottom: auto;
   left: 20%;
   transform: rotate(35deg);
-}
+} */
 
 .liner-gradient-blue {
   background-image: linear-gradient(to bottom, #57c3ff, #57c3ff);
