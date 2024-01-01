@@ -35,7 +35,7 @@ function OutputSection({ text }: ResultSectionProps) {
         clearInterval(intervalId);
         setCompletedTyping(true);
       }
-    }, 20);
+    }, 18);
   }, [text]);
 
   return (
