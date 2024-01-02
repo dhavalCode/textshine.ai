@@ -11,7 +11,7 @@ const generateInputSchema = z.object({
   }),
 });
 
-export async function POST(req: Request): Promise<unknown> {
+export async function POST(req: Request): Promise<NextResponse> {
   try {
     const body = (await req.json()) as unknown;
 
