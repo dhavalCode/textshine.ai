@@ -23,7 +23,7 @@ function TemplateSelector({ value, options, onSelect }: TemplateSelectorProps) {
       value={value.toString()}
       onValueChange={(newVal) => onSelect(newVal)}
     >
-      <SelectTrigger className="w-full max-w-80 text-neutral-100">
+      <SelectTrigger className="w-full sm:max-w-80  text-neutral-100">
         <SelectValue placeholder="Select" />
       </SelectTrigger>
       <SelectContent className="bg-neutral-800 text-neutral-100">

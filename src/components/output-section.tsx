@@ -41,15 +41,15 @@ function OutputSection({ text }: ResultSectionProps) {
   return (
     <div className="bg-secondary/20 text-neutral-100 mt-10 rounded-xl px-4 py-5 relative">
       <div className="mb-1">
-        <div className="flex flex-row justify-end">
+        <div className="flex flex-row justify-end items-center ">
           {copying ? (
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row text-sm sm:text-base">
               <Check className="w-4 h-4 mr-2" />
               Copied
             </div>
           ) : (
             <div
-              className="flex flex-row items-center cursor-pointer"
+              className="flex flex-row items-center cursor-pointer text-sm sm:text-base"
               onClick={handleCopy}
             >
               <Copy className="w-4 h-4 mr-2" />

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "450px",
+      },
       colors: {
         neutral: {
           800: "#0e1425",

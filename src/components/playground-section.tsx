@@ -18,7 +18,7 @@ interface PlaygroundSectionProps {
 
 function PlaygroundSection({ templateOptions }: PlaygroundSectionProps) {
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedTemplateId, setSelectedTemplateId] = useState(1);
+  const [selectedTemplateId, setSelectedTemplateId] = useState(2);
   const [inputText, setInputText] = useState("");
   const [displayText, setDisplayText] = useState("");
 
@@ -51,7 +51,7 @@ function PlaygroundSection({ templateOptions }: PlaygroundSectionProps) {
         }}
       />
 
-      <div className="flex flex-row justify-between mt-5">
+      <div className="flex flex-col sm:flex-row justify-between mt-5 space-y-5 sm:space-y-0">
         <TemplateSelector
           value={selectedTemplateId}
           options={templateOptions}
