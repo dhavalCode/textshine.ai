@@ -44,7 +44,7 @@ function PlaygroundSection({ templateOptions }: PlaygroundSectionProps) {
     <div className="max-w-[800px] mx-auto mt-16">
       <Textarea
         className="bg-neutral-800 text-neutral-100"
-        placeholder="Your input here."
+        placeholder="Start Writing..."
         value={inputText}
         onChange={(event) => {
           setInputText(event.target.value);

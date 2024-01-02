@@ -58,7 +58,7 @@ function OutputSection({ text }: ResultSectionProps) {
           )}
         </div>
       </div>
-      <p>
+      <p className="text-sm sm:text-base">
         {displayText}
         {!completedTyping && (
           <svg
