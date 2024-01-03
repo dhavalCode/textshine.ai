@@ -3,7 +3,9 @@ import PlaygroundSection from "@/components/playground-section";
 import prisma from "@/prisma";
 
 export default async function Home() {
-  const templateOptions = await prisma.template.findMany();
+  const templateOptions = await prisma.template.findMany({
+    orderBy: { id: "asc" },
+  });
 
   return (
     <main className="container fle min-h-screen mx-auto px-5 lg:px-5">
