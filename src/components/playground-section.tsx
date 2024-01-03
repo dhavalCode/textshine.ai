@@ -18,7 +18,9 @@ interface PlaygroundSectionProps {
 
 function PlaygroundSection({ templateOptions }: PlaygroundSectionProps) {
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedTemplateId, setSelectedTemplateId] = useState(2);
+  const [selectedTemplateId, setSelectedTemplateId] = useState(
+    templateOptions.length > 0 ? templateOptions[0].id : 0
+  );
   const [inputText, setInputText] = useState("");
   const [displayText, setDisplayText] = useState("");
 

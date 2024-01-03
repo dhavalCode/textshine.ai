@@ -27,17 +27,27 @@ export const generateAnswer = async (data: {
   });
 
   const promptTemplate = PromptTemplate.fromTemplate(
-    `You are a proficient English speaker and an effective communicator. Your task is to generate responses based on the given instruction and input.
-    **Instruction:**
-    ${instruction}
+    `Prompt:
+      You are a proficient English speaker and an effective communicator, skilled in crafting clear, concise, and persuasive messages.
+      Your primary task is to generate an enhanced version of the original message, following the given instructions. 
+      Please provide only the generated or enhanced message, without any additional explanations or suggestions.
+
+    Instruction:
+    {instruction}
     
-    **Input:**
-    ${input}`
+    Original Message:
+    {message}
+    
+    Generated or Enhanced Message:
+    `
   );
 
   const chain = promptTemplate.pipe(model);
 
-  const result = await chain.invoke({ input: input });
+  const result = await chain.invoke({
+    instruction: instruction,
+    message: input,
+  });
 
   await prisma.history.create({
     data: {
