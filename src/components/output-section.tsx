@@ -1,5 +1,6 @@
 "use client";
 import { Check, Copy } from "lucide-react";
+import Markdown from "react-markdown";
 import copy from "copy-to-clipboard";
 import React, { useEffect, useState } from "react";
 
@@ -40,11 +41,11 @@ function OutputSection({ text }: ResultSectionProps) {
 
   return (
     <div className="bg-secondary/20 text-neutral-100 mt-10 rounded-xl px-4 py-5 relative">
-      <div className="mb-1">
+      <div className="mb-3">
         <div className="flex flex-row justify-end items-center ">
           {copying ? (
             <div className="flex flex-row text-sm sm:text-base">
-              <Check className="w-4 h-4 mr-2" />
+              <Check className="w-4 h-4 mr-2 mt-1" />
               Copied
             </div>
           ) : (
@@ -59,7 +60,7 @@ function OutputSection({ text }: ResultSectionProps) {
         </div>
       </div>
       <p className="text-sm sm:text-base">
-        {displayText}
+        <Markdown>{displayText}</Markdown>
         {!completedTyping && (
           <svg
             viewBox="8 4 8 16"
